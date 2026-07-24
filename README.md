@@ -1,11 +1,19 @@
-# AGM Real Estate Group — HOA / Community Association Proposal Micro-Site
+# AGM Real Estate Group — West Haven Homeowners' Association Proposal Micro-Site
 
 **CONFIDENTIAL — proposal material. Private repository. Do not make public.**
 
-A digital micro-site version of AGM's *Proposal for Management Services · Community Association /
-HOA*. Each proposal slide is its own page in a single-file static site (`index.html`, no build step,
-no dependencies). Fonts load from Google Fonts; everything else is inline. This repo shares the
-design system used across AGM's proposal micro-sites.
+A digital micro-site version of AGM's *Proposal for Management Services* for the **West Haven
+Homeowners' Association** (Bellevue, WA). Built from AGM's shared HOA / community-association
+proposal template — the design system, structure, and code are unchanged; the property name, the
+Governance section, and the fee figures are tailored to West Haven. Each proposal slide is its own
+page in a single-file static site (`index.html`, no build step, no dependencies). Fonts load from
+Google Fonts; everything else is inline. This repo shares the design system used across AGM's
+proposal micro-sites.
+
+Because West Haven is administratively dissolved and has no active Board, the Governance section
+leads with the path to reinstatement — restoring corporate standing, calling a special meeting to
+elect a Board under RCW 64.34 / 64.90, and stabilizing operations (including the neglected common
+area along W Lake Sammamish Road) — before flowing into ongoing board support.
 
 ## What this is
 The deck's sections, rebuilt as an institutional, navigable micro-site (nine tabs — Fees is split
@@ -103,8 +111,9 @@ page) so you can filter gate traffic from in-proposal activity.
 - Featured-asset tiles are placeholders; drop in property photography by swapping the `.asset-tile`
   elements for `<img>` tags when imagery is available.
 - Two Fees pages per request: **Fees A** (Fee Structure — retainer band + "Included in the base fee"
-  grid + onboarding) and **Fees B** (condensed fee summary). Fee figures on both are placeholders
-  (`$X`) — replace with the negotiated amounts per engagement.
-- The `topbar-prop` label in `index.html` and the `prop-name` on the cover page read
-  `[ Community Association Property Name ]` — set these to the actual property per deal.
+  grid + onboarding) and **Fees B** (condensed fee summary). Fee figures on both are set for West
+  Haven: **$800 / month** management retainer and a **$2,500–$3,000** one-time onboarding range
+  (finalized once the scope of past-due work is confirmed).
+- The `topbar-prop` label in `index.html` and the `prop-name` on the cover page are set to
+  **West Haven Homeowners' Association**.
 - Transition & Onboarding slides (8 and 9) from the master deck are intentionally excluded.

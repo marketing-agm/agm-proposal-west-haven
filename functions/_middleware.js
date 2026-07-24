@@ -194,7 +194,7 @@ function coverHTML({ error, analytics }) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
 ${ph}
-<title>AGM Real Estate Group &mdash; HOA Proposal &mdash; Access</title>
+<title>AGM Real Estate Group &mdash; West Haven HOA Proposal &mdash; Access</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%233A8DDE' d='M4 27 16 5l12 22h-5l-7-13-7 13z'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -270,7 +270,7 @@ ${ph}
     <div class="body">
       <section class="col left">
         <h1 class="title">Proposal for Management&nbsp;Services</h1>
-        <div class="prop-name">[ Community Association Property Name ]</div>
+        <div class="prop-name">West Haven Homeowners&rsquo; Association</div>
         <div class="inside">
           <div class="in-label">Proposal Table of Contents</div>
           <ul>
