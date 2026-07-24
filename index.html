@@ -178,6 +178,9 @@ em{font-style:italic;}
 
 /* section header — serif italic + pipe + kicker */
 .sec-head{display:flex; align-items:baseline; gap:16px; padding-bottom:14px; border-bottom:1px solid var(--line-strong); margin:0 0 30px;}
+/* when a section header sits directly above a bordered grid, drop the header's
+   own underline so the grid's top border is the sole divider (avoids a double line) */
+.sec-head:has(+ .cellgrid), .sec-head:has(+ .incl-grid), .sec-head:has(+ .fee-cards){border-bottom:none; padding-bottom:0; margin-bottom:22px;}
 .sec-head h3{font-family:var(--serif); font-style:italic; font-weight:600; font-size:21px; letter-spacing:-.01em; color:var(--ink); white-space:nowrap;}
 .sec-head .pipe{color:var(--accent); font-size:20px; font-weight:300;}
 .sec-head .kick{font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-65); white-space:nowrap;}
@@ -823,7 +826,7 @@ html{scrollbar-width:thin; scrollbar-color:var(--line-strong) transparent;}
             </div>
           </div>
         </div>
-        <p class="fee-footnote reveal">Monthly management fee is $800. The one-time onboarding fee is estimated at $2,500&ndash;$3,000 and is finalized once the scope of past-due work required to bring the Association into stabilized operating condition is confirmed.</p>
+        <p class="fee-note reveal">Monthly management fee is $800. The one-time onboarding fee is estimated at $2,500&ndash;$3,000 and is finalized once the scope of past-due work required to bring the Association into stabilized operating condition is confirmed.</p>
       </div>
 
             <!-- prev / next pager (shared, updated by JS) -->
