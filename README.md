@@ -77,19 +77,24 @@ instead, but that uses Cloudflare's own login flow, not this custom screen. Don'
 
 ## Analytics (PostHog)
 The site is fully instrumented for PostHog across **both** the login/cover page and the proposal.
-Turn it on by setting these as **environment variables** in the Cloudflare Pages project (Settings →
-Variables and Secrets), for **Production _and_ Preview**, then redeploy:
+
+**The proposal's key is embedded directly in `index.html`** (AGM project `471747`, US Cloud). PostHog
+Project API Keys are write-only client tokens ("Safe to use in public apps"), so committing it is
+supported. This is deliberate: the Pages Function only injects the key on the `*.pages.dev` route, so
+serving the proposal from another address (for example the corporate domain at `/westhaven`) skipped
+the injection and analytics silently stayed off. With the key inline, **every route reports
+correctly**. To change or rotate it, edit the `window.AGM_POSTHOG_KEY` line in `index.html`.
+
+The **cover/login page** still reads its key from the Cloudflare environment variable below, so keep
+the two values in sync:
 
 | Name | Value |
 |------|-------|
 | `POSTHOG_KEY` | your **Project API Key** (PostHog → Settings → Project → *Project API Key*, starts with `phc_`) |
 | `POSTHOG_HOST` | *(optional)* `https://us.i.posthog.com` (US, default) or `https://eu.i.posthog.com` (EU) |
 
-Until `POSTHOG_KEY` is set, analytics stays off: no requests, no errors. The key lives only in
-Cloudflare (nothing committed to the repo): the gate function injects it into the cover page and fills
-in the proposal's inline placeholder as `index.html` is served. (You can still hard-code the key
-directly in `index.html`'s marked `<head>` block instead, but that only covers the proposal, not the
-gate page, and puts the key in the repo; the env var is preferred.)
+Until `POSTHOG_KEY` is set, the **cover/login page** sends nothing (no requests, no errors). The
+proposal itself tracks regardless, because its key is inline (see above).
 
 What it tracks once the key is set:
 - **Cover / login page:** a `$pageview` on load and a `gate_viewed` event (tagged `surface: gate`),
